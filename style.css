@@ -1,0 +1,147 @@
+
+    /* body{
+      https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPm5BnsZ_8A22NniO76n4WCrN4ADgvRIUwKg&usqp=CAU
+      https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRM3mdFv3X2ihkpSEdxkh-3YzTZXvm8ZpJ9pg&usqp=CAU
+      https://png.pngtree.com/png-vector/20190801/ourmid/pngtree-vector-lock-icon-png-image_1638372.jpg
+      background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTqeDRYuGVJPEmBU4VHLy28Sjmj00wkOUR2Vw9RBuySn2JDgMz5S49Cj7lOP421qZx13pA&usqp=CAU');
+  
+    } */
+    *{padding: 0px;margin: 0px;}
+
+    div#pass {
+
+      font-family: 'Open Sans', sans-serif;
+  text-align: center;
+  background-color: #000000;
+  color: white;
+  width: 50%;
+  height:420px;
+  border: 2px double rgb(0, 0, 0);
+  border-radius: 76px;
+  margin-top: 16px;
+  padding-top: 20px;
+  box-shadow: 10px 10px 40px rgb(83, 78, 78);
+  box-sizing: border-box;
+ 
+}
+input[type=checkbox]{
+  margin: 15px;
+}
+ 
+
+#password {
+  width: 268px;
+  height: 50px;
+  color: #000000;
+  background-color: #fff;
+  font-size: 24px;
+  text-align: center;
+
+  
+}
+
+div#submit {
+  background-color:rgb(0 132 208);
+  width: 269px;
+  height: 50px;
+  color: white;
+  margin: 0 auto;
+  line-height: 50px;
+}
+#generate{
+  border-radius: 30px;
+  color: rgb(0, 0, 0);
+  background-color: #f4efefef;
+  font-weight: bold;
+  margin-top: 10px;
+  padding: 5px;
+  border: none;
+}
+#generate:hover{color: black; background-color: #fff;}
+
+
+#footer{
+  background-color: #111;
+  align-items: left;
+  height: 150px;
+  margin-top:30px ;
+  padding-top: 5px;
+}
+#copybt:hover{background-color: rgb(0 132 208);}
+
+/* This code contains design for footer */
+#credit{
+  height: 40px;
+  background-color: #000000;
+  text-align: center;
+  text-transform: capitalize;
+  padding-top: 5px;
+  
+}
+#credit p a{
+  color:#44bae8;
+  font-size: 16px;
+  text-decoration: none;
+}
+.name{
+  color:rgb(51 130 254);
+  font-size: 38px;
+  text-transform: capitalize;
+}
+img.icon {width:25px; float:center; height:25px; margin: 10px; position: relative;margin-top: 50px;}
+.icon:hover {opacity: 0.5;}
+/* This code is for responsive Website*/
+@media screen and (max-width: 545px) {
+  div#pass {
+    float: none;
+    width: 100%;
+  }
+}
+/* Here is the code for the copy text css */
+.tooltip {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 140px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px;
+  position: absolute;
+  z-index: 1;
+  bottom: 150%;
+  left: 50%;
+  margin-left: -75px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.tooltip .tooltiptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+#copybt{
+  border-radius: 30px;
+  color: rgb(255, 255, 255);
+  background-color: #4285F4;
+  font-weight: bold;
+  margin-top: 10px;
+  padding: 5px;
+width: 77px;
+  border: none;
+}

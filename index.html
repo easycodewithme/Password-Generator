@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Password Generator</title>
+  
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/x-icon" href=" https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPm5BnsZ_8A22NniO76n4WCrN4ADgvRIUwKg&usqp=CAU">
+
+</head>
+
+<body>
+  <center>
+  <center> 
+    <h1 style="color: rgb(0 132 208); font-family: 'Poppins', sans-serif; padding-top: 20px;">Password Generater</h1></center><img src="" alt="">
+    
+  <div id="pass" >
+    <br>
+    <label for="Length">Your Password Length</label>
+    <input type="number" value="8" min="1" max="25" style="width:129px">
+    <br>
+    <label for="Uppercase" >Uppercase</label>
+    <input type="checkbox">
+
+    <br>
+    <label for="Lowercase">Lowercase</label>
+    <input type="checkbox">
+    <br>
+    <label for="Number">Number</label>
+    <input type="checkbox">
+    <br>
+    <label for="Symble">Symbol</label>
+    <input type="checkbox">
+    <br>
+    <div id="submit"><input type="button" value="Generate" id="generate"></div>
+    <input id="password" type="text" disabled><br>
+ 
+    
+<!-- This code is for copy button -->
+    <div class="tooltip">
+      <button onclick="myFunction()" onmouseout="outFunc()" id="copybt" >
+        <span class="tooltiptext" id="myTooltip">Copy to clipboard</span>
+        Copy text
+        </button>
+      </div></center>
+    </div>
+      <div id="footer">
+        <center>
+        <footer>
+
+          <h1 class="name">Frontend Developer</h1>
+          <p style="color: white; text-transform: capitalize;" > Create strong password with best password generator website </p>
+        <section class="icone_social_footer">
+      
+          <a href="https://www.facebook.com/pruthviraj.pasi.7/" target="_blank">
+            <img src="https://pnggrid.com/wp-content/uploads/2021/07/Facebook-Logo-Square-768x768.png" class="icon"></a>
+      
+          <a href="https://instagram.com/pruthvirajpasee07" target="_blank">
+            <img src="https://www.comune.foggia.it/wp-content/uploads/2021/04/instagram-logo-png.png" class="icon"></a>
+      
+           <a href="https://gpgce.blogspot.com" target="_blank">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Telegram_logo.svg/480px-Telegram_logo.svg.png" class="icon"></a>
+          
+              <a href="https://github.com/easycodewithme" target="_blank">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQZWM9na5PcnybjMC5TB08Hm-0OKJt62f5dF14zPa14oqKJQpd6fIshZSYknt7fhUnr9q8&usqp=CAU" class="icon"></a>
+      
+        </section>
+      </footer>
+      
+    </center>
+  </div>
+  <div id="credit">
+    <p style="color: white;">copyright &copy; <a href="https://technicalpichai.wordpress.com">Frontend Developer</a>  </p>
+  </div>
+
+
+
+  <script>
+    let length = document.getElementsByTagName('input')[0];
+    let upperCase = document.getElementsByTagName('input')[1];
+    let lowerCase = document.getElementsByTagName('input')[2];
+    let number = document.getElementsByTagName('input')[3];
+    let symble = document.getElementsByTagName('input')[4];
+    let submit = document.getElementById('submit');
+    let pass = document.getElementById('password');
+
+    let upperArr = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
+    let lowerArr = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
+    let numberArr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
+    let symbleArr = ['~', '@', '#', '$', '_', '&', '*', '+', '?', '£', '¢', '¥', '%', '©', '®', '™', '✓', '∆', '√', 'π', '¶'];
+
+    let upper;
+    let lower;
+    let numbers;
+    let symbles;
+    let passLength;
+    setInterval(time, 100);
+
+    function time() {
+      passLength = length.value;
+
+
+    }
+    submit.addEventListener('click', function() {
+
+
+      let i = 0;
+      pass.value = '';
+      while (i < passLength) {
+
+        if (upperCase.checked && i < passLength) {
+          upper = upperArr[Math.floor(Math.random() * upperArr.length)];
+          pass.value += upper;
+          i++;
+        }
+        if (lowerCase.checked && i < passLength) {
+          lower = lowerArr[Math.floor(Math.random() * lowerArr.length)];
+          pass.value += lower;
+          i++;
+        }
+        if (number.checked && i < passLength) {
+          numbers = numberArr[Math.floor(Math.random() * numberArr.length)];
+          pass.value += numbers;
+          i++;
+        }
+        if (symble.checked && i < passLength) {
+          symbles = symbleArr[Math.floor(Math.random() * symbleArr.length)];
+          pass.value += symbles;
+          i++;
+        }
+      }
+
+    })
+    function myFunction() {
+  var copyText = document.getElementById("password");
+  copyText.select();
+  copyText.setSelectionRange(0, 99999);
+  navigator.clipboard.writeText(copyText.value);
+  
+  var tooltip = document.getElementById("myTooltip");
+  tooltip.innerHTML = "Copied: " + copyText.value;
+}
+
+function outFunc() {
+  var tooltip = document.getElementById("myTooltip");
+  tooltip.innerHTML = "Copy to clipboard";
+}
+  </script>
+  
+</body>
+
+</html>
